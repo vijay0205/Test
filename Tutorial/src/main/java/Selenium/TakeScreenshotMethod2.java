@@ -13,13 +13,14 @@ import org.openqa.selenium.support.events.EventFiringWebDriver;
 
 
 public class TakeScreenshotMethod2 {
-	 public static WebDriver driver;
-	 public static String  targetFolder="C:/Users/Mom's Blessing/eclipse-workspace/Tutorial/src/test/resources/Screenshot.png";
-	
+	public static WebDriver driver;
+	public static String localSystemPath = System.getProperty("user.dir");
+	public static String targetFolder = localSystemPath +"\\src\\test\\resources\\Screenshot.jpg";
 
 public static void main(String[] args) throws IOException, InterruptedException {
 	 
-		System.setProperty("webdriver.chrome.driver",  "C:/Users/Mom's Blessing/eclipse-workspace/Tutorial/src/test/resources/chromedriver.exe");
+	String chromeDriverPath = System.getProperty("user.dir") + "\\src\\test\\resources\\chromedriver.exe";
+	System.setProperty("webdriver.chrome.driver", chromeDriverPath);
 		driver=new ChromeDriver();
 		driver.get("https://www.youtube.com/watch?v=opOtP6Qe7fQ");
 		 File targetFolderPath= new File(targetFolder);
